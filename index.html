@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: antiquewhite;
+            font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+            text-align: center;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 0px;
+        }
+        button{
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+        #results{
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
+
+    </style>
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <p>Choose between Rock Paper or Scissors</p>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+    <p id="results"></p>
+    <script>
+        const rockBtn = document.getElementById("rock");
+        const paperBtn = document.getElementById("paper");
+        const scissorsBtn = document.getElementById("scissors");
+        const results = document.getElementById("results");
+
+        //Adding event listeners
+        rockBtn.addEventListener("click",playRock);
+        paperBtn.addEventListener("click", playPaper);
+        scissorsBtn.addEventListener("click", playScissors);
+
+        //Rock function
+        function playRock() {
+            //storing the computer's choice
+            const computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                results.textContent = "It's a tie!";
+            } else if (computerChoice === "paper") {
+                results.textContent = "You lose! Paper beats Rock";
+            }else if (computerChoice === "scissors") {
+                results.textContent = "You win! Rock beats Scissors";
+            }
+        }
+        //Paper function
+        function playPaper() {
+            //storing the computer's choice
+            const computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                results.textContent = "You win! Paper beats Rock";
+            }
+            else if (computerChoice === "paper") {
+                results.textContent = "It's a tie!";
+            }
+            else if (computerChoice === "scissors") {
+                results.textContent = "You lose! Scissors beats Paper";
+                }
+                
+        }
+        //Scissors function
+        function playScissors() {
+            //storing the computer's choice
+            const computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                results.textContent = "You lose! Rock beats Scissors";
+            }
+            else if (computerChoice === "paper") {
+                results.textContent = "You win! Paper beats Scissors";
+            }
+            else if (computerChoice === "scissors") {
+                results.textContent = "It's a tie!";
+            }
+        }
+        
+        //set computer choice function
+        function getComputerChoice() {
+        const choices = ["rock","paper","scissors"];
+        const randomIndex = Math.floor(Math.random()*3);
+        return choices[randomIndex];
+        }
+    </script>
+</body>
+</html>
