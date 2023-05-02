@@ -17,7 +17,8 @@ User-friendly interface
 Randomized computer moves
 Score tracking
 End-of-game results display
-##Contributing
+
+## Contributing
 If you'd like to contribute to this project, please fork the repository and make your changes in a new branch. Once you've made your changes, submit a pull request and I'll review it as soon as possible.
 
 ## License
